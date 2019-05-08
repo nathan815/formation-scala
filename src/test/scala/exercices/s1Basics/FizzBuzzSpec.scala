@@ -9,7 +9,13 @@ class FizzBuzzSpec extends FunSpec with Matchers {
       * Ecris les tests pour la fonction fizzBuzz ici.
       * Le fichier MainSpec.scala peut servir d'exemple pour la syntaxe d'un test.
       *
+      * EN: Write tests for the "fizzBuzz" function here.
+      * MainSpec.scala can be used as a syntax example to write your tests.
+      *
       * Voici quelques exemples d'utilisation :
+      *
+      * EN: below some examples:
+      *
       *   - fizzBuzz(1) => "1"
       *   - fizzBuzz(2) => "2"
       *   - fizzBuzz(3) => "Fizz"

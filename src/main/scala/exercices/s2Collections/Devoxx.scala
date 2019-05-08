@@ -8,6 +8,10 @@ import scala.util.Try
 object Devoxx {
   /**
     * Complète les quatre fonctions avec des ??? pour faire passer les tests
+    *
+    *
+    * EN: replace "???" by the actual behavior to pass all the tests
+    *
     */
 
   type TalkId = String
@@ -34,6 +38,12 @@ object Devoxx {
   /**
     *     ---------- Ne pas modifier ----------
     * Fonction utilitaire pour charger les données.
+    *
+    *
+    *     ---------- Do not change ------------
+    *
+    * EN: Utility function to load data
+    *
     */
   def loadData(): Try[(Seq[Talk], Seq[Speaker], Seq[Slot], Seq[Room])] = {
     import java.io.File
