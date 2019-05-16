@@ -5,34 +5,34 @@ object s1Basics {
   object DefineValues {
 
     object Variable {
-      // déclarer une variable
+      // declare a variable
       var city: String = "Paris";
 
-      // ';' optionnel
+      // ';' optional
       var town: String = "Nice"
 
-      // inférence de type
+      // type inference
       var name = "Aix"
 
-      // immutabilité
+      // immutablility
       val lang = "Scala"
     }
 
     object Function {
-      // déclarer une méthode
+      // declare a method/function
       def size(in: String): Int = {
         return in.length();
       }
 
-      // 'return' implicite, ';' optionnel
+      // 'return' is implicit, ';' optional
       def up(in: String): String = {
         in.toUpperCase()
       }
 
-      // expression simple
+      // simple expression
       def add(a: Int, b: Int): Int = a + b
 
-      // inférence de type (non recommandé)
+      // type inference (not advised: why?)
       def sub(a: Int, b: Int) = a - b
     }
 
@@ -42,16 +42,16 @@ object s1Basics {
 
       def size(in: String): Int = in.length
 
-      // exécuter une fonction
+      // execute a function
       val s = size(city)
 
-      // exécuter une méthode
+      // execute a method
       val l1 = town.length()
 
-      // '.' optionnel (non recommandé)
+      // '.' optional (not advised)
       val l2 = town length()
 
-      // '()' optionnelles (non recommandé)
+      // '()' optional (not advised)
       val l3 = town.length
       val c1 = town.charAt(1)
       val c2 = town charAt 1

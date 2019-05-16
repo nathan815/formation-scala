@@ -5,6 +5,10 @@ import scala.util.control.NonFatal
 object CustomTry {
   /**
     * Complète les fonctions avec ??? dans MySuccess et MyFailure pour faire passer les tests
+    *
+    *
+    * EN: change all "???" in "MySuccess" and "MyFailure" with the actual behavior
+    *
     */
 
   sealed abstract class MyTry[+A] {

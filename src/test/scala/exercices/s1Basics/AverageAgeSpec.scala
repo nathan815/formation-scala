@@ -19,6 +19,12 @@ class AverageAgeSpec extends FunSpec with Matchers {
       *   - averageAge(employees) => 34.6
       *   - averageAge(employees, 25) => 42
       *   - averageAge(employees, 25, RnD) => 43
+      *
+      *
+      * EN: write tests for "averageAge" function, here are some examples:
+      *   - averageAge(employees) => 34.6
+      *   - averageAge(employees, 25) => 42
+      *   - averageAge(employees, 25, RnD) => 43
       */
   }
 }
