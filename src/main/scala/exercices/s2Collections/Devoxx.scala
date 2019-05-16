@@ -24,21 +24,23 @@ object Devoxx {
   case class Room(id: RoomId, name: String)
 
   // calcule le pourcentage de talks en français (chiffre entre 0 et 100)
+  // calculate the percentage of talks in French (number between 0 and 100)
   def frenchTalkPercentage(talks: Seq[Talk]): Double = {
     talks.count(_.lang == "fr") / talks.size.toDouble * 100
   }
 
   // trouve les talks du speaker indiqué
+  // find the speaker's talks indicated
   def talksOfSpeaker(talks: Seq[Talk], id: SpeakerId): Seq[Talk] = {
     talks.filter(t => t.speakers.contains(id))
   }
 
   // extrait le programme d'une salle avec les horaires (début & fin) et le talk associé
-  def roomSchedule(slots: Seq[Slot], talks: Seq[Talk], id: RoomId): Seq[(Date, Date, Talk)] = {
-
-  }
+  // extract the program from a room with the schedules (start & end) and the associated talk
+  def roomSchedule(slots: Seq[Slot], talks: Seq[Talk], id: RoomId): Seq[(Date, Date, Talk)] = ???
 
   // si le speaker est en train de présenter à la date donnée, renvoi la salle où il présente, sinon rien
+  // if the speaker is present at the given date, return the room where he presents, otherwise nothing
   def isSpeaking(slots: Seq[Slot], talks: Seq[Talk], rooms: Seq[Room], id: SpeakerId, time: Date): Option[Room] = ???
 
   /**
