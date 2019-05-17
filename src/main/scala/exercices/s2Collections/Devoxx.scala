@@ -37,7 +37,9 @@ object Devoxx {
 
   // extrait le programme d'une salle avec les horaires (début & fin) et le talk associé
   // extract the program from a room with the schedules (start & end) and the associated talk
-  def roomSchedule(slots: Seq[Slot], talks: Seq[Talk], id: RoomId): Seq[(Date, Date, Talk)] = ???
+  def roomSchedule(slots: Seq[Slot], talks: Seq[Talk], id: RoomId): Seq[(Date, Date, Talk)] = {
+    slots.filter(_.room == id).map(slot => (slot.start, slot.end, talks.filter(_.id == slot.talk).head))
+  }
 
   // si le speaker est en train de présenter à la date donnée, renvoi la salle où il présente, sinon rien
   // if the speaker is present at the given date, return the room where he presents, otherwise nothing
