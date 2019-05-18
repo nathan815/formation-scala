@@ -29,7 +29,7 @@ class DevoxxSpec extends FunSpec with Matchers {
       }
     }
     describe("isSpeaking") {
-      it("should eventually return the Room where the speaker is at the asked time") {
+      it("should return the Room where the speaker is at the asked time") {
         isSpeaking(slots, talks, rooms, speakerId, new Date(1491491200000L)).map(_.id) shouldBe Some(roomId)
       }
     }
