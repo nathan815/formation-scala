@@ -27,6 +27,7 @@ object Devoxx {
   // calculate the percentage of talks in French (number between 0 and 100)
   def frenchTalkPercentage(talks: Seq[Talk]): Double = {
     talks.count(_.lang == "fr") / talks.size.toDouble * 100
+    //talks.foldLeft((0.0, 0)) { case ((a,b), talk) => (a + talk.id.toInt, b + 1) }
   }
 
   // trouve les talks du speaker indiqué
@@ -43,7 +44,11 @@ object Devoxx {
 
   // si le speaker est en train de présenter à la date donnée, renvoi la salle où il présente, sinon rien
   // if the speaker is present at the given date, return the room where he presents, otherwise nothing
-  def isSpeaking(slots: Seq[Slot], talks: Seq[Talk], rooms: Seq[Room], id: SpeakerId, time: Date): Option[Room] = ???
+  def isSpeaking(slots: Seq[Slot], talks: Seq[Talk], rooms: Seq[Room], id: SpeakerId, time: Date): Option[Room] = {
+    val speakerTalks = talksOfSpeaker(talks, id).map(_.id)
+    val slot = slots.find(slot => time.after(slot.start) && time.before(slot.end) && speakerTalks.contains(slot.talk))
+    rooms.find(_.id == slot.get.room)
+  }
 
   /**
     *     ---------- Ne pas modifier ----------
