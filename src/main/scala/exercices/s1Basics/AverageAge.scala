@@ -24,4 +24,8 @@ object AverageAge {
   case class Team(employees: Seq[Employee]) {
     def has(employee: Employee): Boolean = employees.contains(employee)
   }
+
+  def averageAge(employees: Seq[Employee]): Double = {
+    employees.map(_.age).sum / employees.size
+  }
 }

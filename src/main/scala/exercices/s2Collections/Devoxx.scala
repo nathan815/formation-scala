@@ -45,9 +45,15 @@ object Devoxx {
   // si le speaker est en train de présenter à la date donnée, renvoi la salle où il présente, sinon rien
   // if the speaker is present at the given date, return the room where he presents, otherwise nothing
   def isSpeaking(slots: Seq[Slot], talks: Seq[Talk], rooms: Seq[Room], id: SpeakerId, time: Date): Option[Room] = {
-    val speakerTalks = talksOfSpeaker(talks, id).map(_.id)
-    val slot = slots.find(slot => time.after(slot.start) && time.before(slot.end) && speakerTalks.contains(slot.talk))
+    val speakerIdToTalks = talksOfSpeaker(talks, id).map(talk => (talk.id, talk)).toMap
+    val slot = slots.find(slot => time.after(slot.start) && time.before(slot.end) && speakerIdToTalks.contains(slot.talk))
     rooms.find(_.id == slot.get.room)
+
+    // alternative way that doesn't fail when slot is empty:
+//    slots
+//      .find(slot => time.after(slot.start) && time.before(slot.end) && speakerIdToTalks.contains(slot.talk))
+//      .map { s => rooms.collect { case room if (room.id == s.room) => room }.head }
+
   }
 
   /**

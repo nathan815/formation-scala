@@ -5,6 +5,16 @@ import org.scalatest.{FunSpec, Matchers}
 class FizzBuzzSpec extends FunSpec with Matchers {
   describe("FizzBuzz") {
     import FizzBuzz._
+
+    fizzBuzz(3) shouldBe "Fizz"
+    fizzBuzz(6) shouldBe "Fizz"
+
+    fizzBuzz(5) shouldBe "Buzz"
+    fizzBuzz(10) shouldBe "Buzz"
+
+    fizzBuzz(15) shouldBe "FizzBuzz"
+    fizzBuzz(30) shouldBe "FizzBuzz"
+
     /**
       * Ecris les tests pour la fonction fizzBuzz ici.
       * Le fichier MainSpec.scala peut servir d'exemple pour la syntaxe d'un test.

@@ -6,4 +6,8 @@ object AverageTemperature {
 
   case class Coords(lat: Double, lng: Double)
 
+  def avgTemp(cities: Seq[City]): Seq[(Coords, Double)] = {
+    cities.map(city => (city.coords, city.temperatures.sum/city.temperatures.size))
+  }
+
 }
